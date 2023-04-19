@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Botão Modo Escuro/Claro</title>
+    <style>
+        body {
+            background-color: #fff;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button {
+            background-color: #0077b6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        button.dark-mode {
+            background-color: #333;
+        }
+        
+        button.dark-mode::before {
+            content: "Modo Escuro";
+        }
+        
+        button.light-mode {
+            background-color: #0077b6;
+        }
+        
+        button.light-mode::before {
+            content: "Modo Claro";
+        }
+        
+        body.dark-theme {
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode"></button>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click", () => {
+            document.body.classList.toggle("dark-theme");
+            button.classList.toggle("light-mode");
+            button.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+</html>

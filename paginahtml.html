@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentação HTML</title>
+    <style>
+        body {
+            background-color: #fff;
+            transition: background-color 0.3s ease-in-out;
+        }
+        
+        button {
+            background-color: #0077b6;
+            color: rgb(0, 0, 0);
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            font-weight: bold;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        button.dark-mode {
+            background-color: #333;
+        }
+        
+        button.dark-mode::before {
+            content: "Modo Escuro";
+            color: rgb(255, 255, 255);
+        }
+        
+        button.dark-mode.light-mode::before {
+            color: #000;
+        }
+        
+        button.light-mode {
+            background-color: #ffffff;
+        }
+        
+        button.light-mode::before {
+            content: "Modo Claro";
+        }
+        
+        body.dark-theme {
+            background-color: #333;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <button class="dark-mode"></button>
+    <script>
+        const button = document.querySelector("button");
+        button.addEventListener("click", () => {
+            document.body.classList.toggle("dark-theme");
+            button.classList.toggle("light-mode");
+            button.classList.toggle("dark-mode");
+        });
+    </script>
+</body>
+</html>

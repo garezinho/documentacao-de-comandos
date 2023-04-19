@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+
+  <!--Título-->
+  <title>Documentação de comandos (oficial)</title>
+
+  <!--Icone da página-->
+  <link rel="icon" type="image/png" href="imagens/simbolo2.png" />
+
+  <!--Cabeçalho da página-->
+  <style>
+    /* Estilo da página e do corpo */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #929292;
+      /* Nova cor de fundo */
+    }
+
+    /* Estilo dos retângulos */
+    .linguagem {
+      display: inline-block;
+      width: 30%;
+      margin: 26px;
+      margin-top: 50px;
+      /* Novo espaçamento vertical */
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: white;
+      font-size: 3em;
+      font-weight: bold;
+      padding-top: 30%;
+      position: relative;
+      text-shadow: 1px 1px 1px rgb(255, 255, 255);
+      /* Sombreamento no texto */
+      transition: transform 0.5s ease-in-out, width 0.5s ease-in-out;
+      /* Transições suaves de escala e largura */
+    }
+
+
+    /* Imagens de fundo */
+    #js {
+      background-image: url(imagens/javascript.png);
+    }
+
+    #html {
+      background-image: url(imagens/html5.png);
+    }
+
+    #css {
+      background-image: url(imagens/css.png);
+    }
+
+    /* Overlay */
+    .linguagem::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      /* Cor transparente */
+    }
+
+    /* Estilo do cabeçalho */
+    #cabecalho {
+      background-color: #48505e;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 2em;
+    }
+
+    /* Efeito de hover */
+    .linguagem:hover {
+      transform: scale(1.1);
+      /* Aumenta a escala em 10% */
+      width: 30%;
+      /* Aumenta a largura em 10% */
+    }
+  </style>
+</head>
+
+<body>
+  <div id="cabecalho">
+    <h1>
+      <font face="Arial">Documentação de comandos
+    </h1>
+  </div>
+  <a href="paginajs.html" class="linguagem" id="js" onclick="aumentaImagem(this)"></a>
+  <a href="paginahtml.html" class="linguagem" id="html" onclick="aumentaImagem(this)"></a>
+  <a href="paginacss.html" class="linguagem" id="css" onclick="aumentaImagem(this)"></a>
+
+  <script>
+    function aumentaImagem(elemento) {
+      elemento.style.transform = "scale(1.1)"; // Aumenta a imagem em 10%
+      setTimeout(function () {
+        window.location.href = elemento.href; // Redireciona para a outra página após 0,2
+      }, 200);
+    }
+  </script>
+</body>
+
+</html>
