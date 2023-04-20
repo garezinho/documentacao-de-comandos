@@ -1,58 +1,223 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Botão Modo Escuro/Claro</title>
+    <link rel="Icon" type="image/png" href="imagens/html5.png">
+    <title>Documentação HTML</title>
     <style>
         body {
             background-color: #fff;
             transition: background-color 0.3s ease-in-out;
         }
-        
+
+        body.dark-theme {
+            background-color: #333;
+            color: rgb(0, 0, 0);
+        }
+
         button {
             background-color: #0077b6;
-            color: #fff;
+            color: rgb(0, 0, 0);
             border: none;
             border-radius: 5px;
             padding: 5px 10px;
             font-size: 14px;
             font-weight: bold;
-            position: fixed;
-            bottom: 10px;
-            right: 10px;
+            margin: 10px;
         }
-        
+
         button.dark-mode {
-            background-color: #333;
-        }
-        
-        button.dark-mode::before {
-            content: "Modo Escuro";
-        }
-        
-        button.light-mode {
-            background-color: #0077b6;
-        }
-        
-        button.light-mode::before {
-            content: "Modo Claro";
-        }
-        
-        body.dark-theme {
             background-color: #333;
             color: #fff;
         }
+
+        button.light-mode {
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+
+    <style>
+        /* Estilo para os retângulos */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .code-box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #000;
+            margin: 10px;
+            padding: 10px;
+            background-color: #ff0000;
+            border-radius: 10px;
+        }
+
+        .result-box {
+            width: 300px;
+            height: 200px;
+            border: 2px solid #000;
+            margin: 10px;
+            padding: 10px;
+            background-color: #47bb04;
+            border-radius: 10px;
+            border-color: rgb(0, 0, 0);
+        }
+
+        .comment {
+            position: relative;
+
+        }
+
+        .comment-box {
+            width: 300px;
+            margin: 40px;
+            padding: 10px;
+            background-color: #a3a3a3;
+            position: acenter;
+            top: -0px;
+            left: -40px;
+            border-radius: 10px;
+            border: 2px solid #000;
+        }
+
+        /* Estilo para o texto dentro dos retângulos */
+        code {
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+
+        /* Estilo para o texto do comentário */
+        .comment-text {
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
-    <button class="dark-mode"></button>
+    <button class="dark-mode">Modo Escuro</button>
+
     <script>
         const button = document.querySelector("button");
         button.addEventListener("click", () => {
             document.body.classList.toggle("dark-theme");
             button.classList.toggle("light-mode");
             button.classList.toggle("dark-mode");
+            button.innerHTML = document.body.classList.contains("dark-theme")
+                ? "Modo Claro"
+                : "Modo Escuro";
         });
     </script>
+
+    <!--INICIO DA DOCUMENTAÇÂO-->
+
+
+    <!--USO DE h1 EM TITULOS-->
+    <div class="container">
+        <div class="code-box">
+            <code><h2>
+&nbsp;&nbsp;&lt;h1&gt;  Olá amigos corinthianos&nbsp;&nbsp;&lt;h1&gt; <br>
+Coloque o texto que quiser entre os&nbsp;&nbsp;&lt;h1&gt;.
+</h2>
+        </code>
+        </div>
+        <div class="result-box">
+            <h1>Olá amigos corinthianos</h1>
+        </div>
+        <div class="comment">
+            <div class="comment-box">
+                <p class="comment-text">
+                <h1>
+                    <font face="Arial">Este código é utilizado em títulos.</font>
+                </h1>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--DIVISAO-->
+    <!--MUDAR A COR DO TEXTO-->
+    <div class="container">
+        <div class="code-box">
+            <code> <h2>
+&nbsp;&nbsp;&lt;font color="#A9A9A9">Olá amigos corinthianos&nbsp;&nbsp;&lt;/font&gt; <br>
+Coloque a cor em hexadecimal entre as aspas.
+</h2>
+        </code>
+        </div>
+        <div class="result-box">
+           <h1>
+            <font color="#A9A9A9">Olá amigos corinthianos</font> <br>
+        </h1>
+        </div>
+        <div class="comment">
+            <div class="comment-box">
+                <p class="comment-text">
+                <h1>
+                    <font face="Arial">Este é utilizado para mudar a cor dos textos. </font>
+                </h1>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--DIVISAO-->
+    <!--MUDAR A FONTE DO TEXTO-->
+    <div class="container">
+        <div class="code-box">
+            <code><h2>
+&nbsp;&nbsp;&lt;font face="Arial">Olá amigos corinthianos&nbsp;&nbsp;&lt;/font&gt; <br>
+Escolha a fonte e coloque-a entre as aspas.
+</h2>
+        </code>
+        </div>
+        <div class="result-box">
+           <h1>
+            <font face="Arial">Olá amigos corinthianos</font>
+        </h1>
+        </div>
+        <div class="comment">
+            <div class="comment-box">
+                <p class="comment-text">
+                <h1>
+                    <font face="Arial">Este é utilizado para mudar a fonte dos textos. </font>
+                </h1>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--DIVISAO-->
+    <!--MUDAR A COR DO FUNDO-->
+    <div class="container">
+        <div class="code-box">
+            <code><h2>
+&nbsp;&nbsp;&lt;body  bgcolor="#A9A9A9"&gt; <br>
+Coloque a cor em hexadecimal entre as aspas.
+</h2>
+        </code>
+        </div>
+        <div class="result-box">
+           <h1>
+            Sem exemplo.
+        </h1>
+        </div>
+        <div class="comment">
+            <div class="comment-box">
+                <p class="comment-text">
+                <h1>
+                    <font face="Arial">Este é utilizado para mudar a cor do fundo da página</font>
+                </h1>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
 </body>
+
 </html>
